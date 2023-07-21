@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/1bc3a7e061.js" crossorigin="anonymous"></script>
     <title>To-Do List App</title>
 </head>
 <body>
-    <h1>Hello webpack!</h1>
+    <main class="main">
+        <div class="header">
+            <h1>Today's To Do</h1>
+            <i class="fa fa-refresh"></i>
+        </div>
+        <form class="task-form">
+            <input class="task-input" type="text" placeholder="Add to your list...">
+            <button class="task-add-button"><i class="uil uil-enter"></i></button>
+        </form>
+        <ul class="task-list">
+
+        </ul>
+        <p class="clear-paragraph">
+            Clear all completed
+        </p>
+    </main>
 </body>
 </html>

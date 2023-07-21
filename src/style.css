@@ -1,7 +1,110 @@
-body {
-  background-color: bisque;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: arial, sans-serif;
 }
 
-.hello {
-  color: red;
+body {
+  background-color: rgb(244, 243, 243);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.main {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25rem;
+  margin: 10rem;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.task-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.task-input {
+  color: rgb(126, 126, 126);
+  font-size: 1.12rem;
+  font-style: italic;
+  background-color: white;
+  border: none;
+}
+
+.task-add-button {
+  background-color: transparent;
+  border: none;
+  color: rgb(186, 186, 186);
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.checkbox-task-div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.checkbox {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.task-text {
+  font-size: 1.2rem;
+  border: none;
+}
+
+.fa-ellipsis-vertical {
+  color: rgb(186, 186, 186);
+}
+
+.fa-ellipsis-vertical:hover {
+  cursor: move;
+}
+
+p {
+  color: rgb(143, 143, 143);
+  background-color: rgb(242, 242, 242);
+  text-align: center;
+  padding: 1rem;
 }

@@ -1,14 +1,38 @@
-import _ from 'lodash';
 import './style.css';
 
-function component() {
-  const element = document.createElement('div');
+const tasklist = document.querySelector('.task-list');
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+const tasks = [
+  {
+    description: 'Listen to podcast',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'Daily Exercise',
+    completed: false,
+    index: 2,
+  },
+];
 
-  return element;
+class Displaytasks {
+  static display() {
+    tasks.sort((a, b) => a.index - b.index);
+    tasklist.innerHTML = '';
+    tasks.forEach((task, index) => {
+      tasklist.innerHTML += `
+        <li class="task" draggable="true">
+          <div class="checkbox-task-div">
+            <input class="checkbox" type="checkbox" name="${task.description}" ${task.completed ? 'checked' : ''}>
+            <input class="task-text" type="text" value="${task.description}">
+          </div>
+          <i class="fas fa-ellipsis-vertical" data-index="${index}"></i>
+        </li>      
+      `;
+    });
+  }
 }
 
-document.body.appendChild(component());
+document.addEventListener('DOMContentLoaded', () => {
+  Displaytasks.display();
+});
