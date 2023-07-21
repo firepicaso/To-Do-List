@@ -13,6 +13,12 @@ body {
   justify-content: center;
 }
 
+h1 {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
 .main {
   background-color: white;
   display: flex;
@@ -43,6 +49,7 @@ body {
 }
 
 .task-input {
+  color: rgb(126, 126, 126);
   font-size: 1.12rem;
   font-style: italic;
   background-color: white;
@@ -52,6 +59,7 @@ body {
 .task-add-button {
   background-color: transparent;
   border: none;
+  color: rgb(186, 186, 186);
 }
 
 .task-list {
@@ -72,11 +80,12 @@ body {
 .checkbox-task-div {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .checkbox {
   border: none;
+  outline: none;
   background-color: transparent;
 }
 
@@ -85,8 +94,17 @@ body {
   border: none;
 }
 
+.fa-ellipsis-vertical {
+  color: rgb(186, 186, 186);
+}
+
+.fa-ellipsis-vertical:hover {
+  cursor: move;
+}
+
 p {
-  background-color: rgb(240, 240, 240);
+  color: rgb(143, 143, 143);
+  background-color: rgb(242, 242, 242);
   text-align: center;
   padding: 1rem;
 }

@@ -5,12 +5,12 @@ const tasklist = document.querySelector('.task-list');
 const tasks = [
   {
     description: 'Listen to podcast',
-    completed: true,
+    completed: false,
     index: 1,
   },
   {
     description: 'Daily Exercise',
-    completed: true,
+    completed: false,
     index: 2,
   },
 ];
@@ -23,7 +23,7 @@ class Displaytasks {
       tasklist.innerHTML += `
         <li class="task" draggable="true">
           <div class="checkbox-task-div">
-            <input class="checkbox" type="checkbox" name="checkbox" ${task.completed ? 'checked' : ''}>
+            <input class="checkbox" type="checkbox" name="${task.description}" ${task.completed ? 'checked' : ''}>
             <input class="task-text" type="text" value="${task.description}">
           </div>
           <i class="fas fa-ellipsis-vertical" data-index="${index}"></i>
