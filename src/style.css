@@ -1,7 +1,66 @@
-body {
-  background-color: bisque;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: arial, sans-serif;
 }
 
-.hello {
-  color: red;
+body {
+  background-color: rgb(244, 243, 243);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25rem;
+  margin: 10rem;
+  border-radius: 0.2rem;
+  box-shadow: 0 1px 2px 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1rem;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.task-input {
+  font-size: 1.12rem;
+  font-style: italic;
+  background-color: white;
+  border: none;
+  padding: 1rem;
+  /* width: 100%; */
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 1rem;
+}
+
+.task {
+  list-style: none;
+  display: flex;
+}
+
+p {
+  background-color: rgb(240, 240, 240);
+  text-align: center;
+  padding: 1rem;
 }
