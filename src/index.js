@@ -22,9 +22,9 @@ class Displaytasks {
     tasks.forEach((task, index) => {
       tasklist.innerHTML += `
         <li class="task" draggable="true">
-          <div class="checkbox">
-            <input type="checkbox" name="checkbox" ${task.completed ? 'checked' : ''}>
-            <input type="text" value="${task.description}">
+          <div class="checkbox-task-div">
+            <input class="checkbox" type="checkbox" name="checkbox" ${task.completed ? 'checked' : ''}>
+            <input class="task-text" type="text" value="${task.description}">
           </div>
           <i class="fas fa-ellipsis-vertical" data-index="${index}"></i>
         </li>      
