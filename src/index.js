@@ -6,12 +6,12 @@ const tasks = [
   {
     description: 'Listen to podcast',
     completed: true,
-    index: 1
+    index: 1,
   },
   {
     description: 'Daily Exercise',
     completed: true,
-    index: 2
+    index: 2,
   },
 ];
 
@@ -28,13 +28,11 @@ class Displaytasks {
           </div>
           <i class="fas fa-ellipsis-vertical" data-index="${index}"></i>
         </li>      
-      `;      
+      `;
     });
   }
 }
 
-document.addEventListener('DOMContentLoaded', () =>{
+document.addEventListener('DOMContentLoaded', () => {
   Displaytasks.display();
 });
-
-
