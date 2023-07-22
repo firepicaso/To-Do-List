@@ -13,13 +13,6 @@ body {
   justify-content: center;
 }
 
-h1 {
-  font-size: 1.2rem;
-  font-style: normal;
-  font-weight: 500;
-  color: #646464;
-}
-
 .main {
   background-color: white;
   display: flex;
@@ -31,12 +24,22 @@ h1 {
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
 }
 
+h1 {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 500;
+  color: #646464;
+}
+
+.fa-refresh {
+  color: rgb(186, 186, 186);
+}
+
 .header {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
   padding: 1rem;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
 }
@@ -53,7 +56,6 @@ h1 {
   color: rgb(126, 126, 126);
   font-size: 1.12rem;
   font-style: italic;
-  background-color: white;
   border: none;
   outline: none;
 }
@@ -66,6 +68,14 @@ input[type="text"] {
 
 input[type='checkbox']:checked + span {
   text-decoration: line-through;
+}
+
+input[type='text'] {
+  flex: 1;
+  background: transparent;
+  margin-left: 0.5rem;
+  color: #999;
+  font-size: 1rem;
 }
 
 .task-add-button {
@@ -114,9 +124,20 @@ input[type='checkbox']:checked + span {
   cursor: move;
 }
 
+.delete-button {
+  font-size: 1rem;
+  background: none;
+  cursor: pointer;
+  border: 0;
+}
+
 p {
   color: rgb(143, 143, 143);
   background-color: rgb(242, 242, 242);
   text-align: center;
   padding: 1rem;
+}
+
+.hide {
+  display: none;
 }

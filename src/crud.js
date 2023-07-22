@@ -16,27 +16,23 @@ const populateTaskLists = (task) => {
   checkboxElement.checked = task.completed;
 
   const descriptionElement = document.createElement('span');
+  descriptionElement.classList.add('task-description');
   descriptionElement.textContent = task.description;
 
   const iconElement = document.createElement('i');
   const deleteButton = document.createElement('button');
-
-  descriptionElement.addEventListener('click', () => {
-    editTaskDescription(task);
-  });
 
   checkBoxDiv.appendChild(checkboxElement);
   checkBoxDiv.appendChild(descriptionElement);
 
   listElement.appendChild(checkBoxDiv);
 
-  iconElement.classList.add('fa', 'fa-ellipsis-v');
+  iconElement.classList.add('fa', 'fa-ellipsis-vertical');
   iconElement.addEventListener('click', () => {
     editTaskDescription(task);
     listElement.style.backgroundColor = '#e5e5c9';
-    deleteButton.style.display = 'block';
     iconElement.style.display = 'none';
-    deleteButton.style.height = '16px';
+    deleteButton.style.display = 'flex';
   });
 
   listElement.appendChild(iconElement);
@@ -115,5 +111,5 @@ editTaskDescription = (task) => {
 };
 
 export {
-  populateTaskLists, addNewTask, updateIndex, saveTasks, renderTaskList,
+  addNewTask, renderTaskList,
 };
