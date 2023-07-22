@@ -1,8 +1,14 @@
+import { taskComplete, taskInComplete } from './status.js';
+
 const taskList = document.querySelector('.task-list');
 let editTaskDescription;
 let deleteTask;
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+const saveTasks = () => {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+};
 
 const populateTaskLists = (task) => {
   const listElement = document.createElement('li');
@@ -14,6 +20,15 @@ const populateTaskLists = (task) => {
   const checkboxElement = document.createElement('input');
   checkboxElement.type = 'checkbox';
   checkboxElement.checked = task.completed;
+
+  checkboxElement.addEventListener('change', () => {
+    if (checkboxElement.checked) {
+      taskComplete(task);
+    } else {
+      taskInComplete(task);
+    }
+    saveTasks();
+  });
 
   const descriptionElement = document.createElement('span');
   descriptionElement.classList.add('task-description');
@@ -50,11 +65,7 @@ const populateTaskLists = (task) => {
   return listElement;
 };
 
-const saveTasks = () => {
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-};
-
-function addNewTask(description) {
+export function addNewTask(description) {
   const taskIndex = tasks.length + 1;
 
   const task = { description, completed: false, index: taskIndex };
@@ -70,7 +81,7 @@ const updateIndex = () => {
   });
 };
 
-const renderTaskList = () => {
+export const renderTaskList = () => {
   taskList.innerHTML = '';
 
   tasks
@@ -110,6 +121,14 @@ editTaskDescription = (task) => {
   task.index += 1;
 };
 
-export {
-  addNewTask, renderTaskList,
+const clearTasks = () => {
+  tasks = tasks.filter((task) => !task.completed);
+  updateIndex();
+  saveTasks();
+  renderTaskList();
 };
+
+const clearButton = document.querySelector('.clear-button');
+clearButton.addEventListener('click', () => {
+  clearTasks();
+});
