@@ -116,3 +116,15 @@ editTaskDescription = (task) => {
   inputElement.select();
   task.index += 1;
 };
+
+const clearTasks = () => {
+  tasks = tasks.filter((task) => !task.completed);
+  updateIndex();
+  saveTasks();
+  renderTaskList();
+};
+
+const clearButton = document.querySelector('.clear-button');
+clearButton.addEventListener('click', (event) => {
+  clearTasks();
+});

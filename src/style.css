@@ -131,9 +131,13 @@ input[type='text'] {
   border: 0;
 }
 
-p {
-  color: rgb(143, 143, 143);
-  background-color: rgb(242, 242, 242);
-  text-align: center;
+.clear-button {
   padding: 1rem;
+  border: none;
+}
+
+.clear-button a {
+  font-size: 1rem;
+  color: rgb(122, 122, 122);
+  text-decoration: none;
 }
