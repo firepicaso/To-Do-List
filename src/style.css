@@ -17,6 +17,7 @@ h1 {
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 500;
+  color: #646464
 }
 
 .main {
@@ -54,6 +55,17 @@ h1 {
   font-style: italic;
   background-color: white;
   border: none;
+  outline: none;
+}
+
+input[type="checkbox"],
+input[type="text"] {
+  border: none;
+  outline: none;
+}
+
+input[type='checkbox']:checked + span {
+  text-decoration: line-through;
 }
 
 .task-add-button {
