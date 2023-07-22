@@ -54,7 +54,7 @@ const saveTasks = () => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-function addNewTask(description) {
+export function addNewTask(description) {
   const taskIndex = tasks.length + 1;
 
   const task = { description, completed: false, index: taskIndex };
@@ -70,7 +70,7 @@ const updateIndex = () => {
   });
 };
 
-const renderTaskList = () => {
+export const renderTaskList = () => {
   taskList.innerHTML = '';
 
   tasks
@@ -108,8 +108,4 @@ editTaskDescription = (task) => {
   listElement.replaceChild(inputElement, listElement.children[1]);
   inputElement.select();
   task.index += 1;
-};
-
-export {
-  addNewTask, renderTaskList,
 };

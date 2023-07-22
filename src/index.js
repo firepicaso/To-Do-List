@@ -1,5 +1,5 @@
 import './style.css';
-import { renderTaskList, addNewTask } from './crud.js';
+import { renderTaskList, addNewTask } from './module/crud.js';
 
 const newTask = document.querySelector('.task-input');
 const form = document.querySelector('.task-form');
