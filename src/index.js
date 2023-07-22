@@ -1,38 +1,19 @@
 import './style.css';
+import { renderTaskList, addNewTask } from './crud.js';
 
-const tasklist = document.querySelector('.task-list');
+const newTask = document.querySelector('.task-input');
+const form = document.querySelector('.task-form');
 
-const tasks = [
-  {
-    description: 'Listen to podcast',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Daily Exercise',
-    completed: false,
-    index: 2,
-  },
-];
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
 
-class Displaytasks {
-  static display() {
-    tasks.sort((a, b) => a.index - b.index);
-    tasklist.innerHTML = '';
-    tasks.forEach((task, index) => {
-      tasklist.innerHTML += `
-        <li class="task" draggable="true">
-          <div class="checkbox-task-div">
-            <input class="checkbox" type="checkbox" name="${task.description}" ${task.completed ? 'checked' : ''}>
-            <input class="task-text" type="text" value="${task.description}">
-          </div>
-          <i class="fas fa-ellipsis-vertical" data-index="${index}"></i>
-        </li>      
-      `;
-    });
+  const taskDescription = newTask.value;
+  if (taskDescription.trim() === '') {
+    return;
   }
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-  Displaytasks.display();
+  addNewTask(taskDescription);
+  newTask.value = '';
 });
+
+window.addEventListener('load', renderTaskList);
