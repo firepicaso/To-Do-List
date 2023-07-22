@@ -1,10 +1,14 @@
-import { taskComplete, taskInComplete } from "./status.js";
+import { taskComplete, taskInComplete } from './status.js';
 
 const taskList = document.querySelector('.task-list');
 let editTaskDescription;
 let deleteTask;
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+const saveTasks = () => {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+};
 
 const populateTaskLists = (task) => {
   const listElement = document.createElement('li');
@@ -18,7 +22,11 @@ const populateTaskLists = (task) => {
   checkboxElement.checked = task.completed;
 
   checkboxElement.addEventListener('change', () => {
-    checkboxElement.checked ? taskComplete(task) : taskInComplete(task);
+    if (checkboxElement.checked) {
+      taskComplete(task);
+    } else {
+      taskInComplete(task);
+    }
     saveTasks();
   });
 
@@ -55,10 +63,6 @@ const populateTaskLists = (task) => {
   listElement.appendChild(deleteButton);
 
   return listElement;
-};
-
-const saveTasks = () => {
-  localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
 export function addNewTask(description) {
@@ -125,6 +129,6 @@ const clearTasks = () => {
 };
 
 const clearButton = document.querySelector('.clear-button');
-clearButton.addEventListener('click', (event) => {
+clearButton.addEventListener('click', () => {
   clearTasks();
 });
