@@ -54,6 +54,10 @@ const populateTaskLists = (task) => {
   return listElement;
 };
 
+const saveTasks = () => {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+};
+
 function addNewTask(description) {
   const taskIndex = tasks.length + 1;
 
@@ -70,17 +74,6 @@ const updateIndex = () => {
   });
 };
 
-const saveTasks = () => {
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-};
-
-deleteTask = (index) => {
-  tasks = tasks.filter((task) => task.index !== index);
-  updateIndex();
-  saveTasks();
-  renderTaskList();
-};
-
 const renderTaskList = () => {
   taskList.innerHTML = '';
 
@@ -90,6 +83,13 @@ const renderTaskList = () => {
       const listElement = populateTaskLists(task);
       taskList.appendChild(listElement);
     });
+};
+
+deleteTask = (index) => {
+  tasks = tasks.filter((task) => task.index !== index);
+  updateIndex();
+  saveTasks();
+  renderTaskList();
 };
 
 editTaskDescription = (task) => {
