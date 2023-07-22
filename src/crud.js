@@ -5,63 +5,63 @@ let deleteTask;
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 const populateTaskLists = (task) => {
-    const listElement = document.createElement('li');
-    listElement.classList.add('task');
-    
-    const checkBoxDiv = document.createElement('div');
-    checkBoxDiv.classList.add('checkbox-task-div');
+  const listElement = document.createElement('li');
+  listElement.classList.add('task');
 
-    const checkboxElement = document.createElement('input');
-    checkboxElement.type = 'checkbox';
-    checkboxElement.checked = task.completed;
-    
-    const descriptionElement = document.createElement('span');
-    descriptionElement.textContent = task.description;
+  const checkBoxDiv = document.createElement('div');
+  checkBoxDiv.classList.add('checkbox-task-div');
 
-    const iconElement = document.createElement('i');
-    const deleteButton = document.createElement('button');
-    
-    descriptionElement.addEventListener('click', () => {
-        editTaskDescription(task);
-    });
+  const checkboxElement = document.createElement('input');
+  checkboxElement.type = 'checkbox';
+  checkboxElement.checked = task.completed;
 
-    checkBoxDiv.appendChild(checkboxElement);
-    checkBoxDiv.appendChild(descriptionElement);
+  const descriptionElement = document.createElement('span');
+  descriptionElement.textContent = task.description;
 
-    listElement.appendChild(checkBoxDiv);
-  
-    iconElement.classList.add('fa', 'fa-ellipsis-v');
-    iconElement.addEventListener('click', () => {
-        editTaskDescription(task);
-        listElement.style.backgroundColor = '#e5e5c9';
-        deleteButton.style.display = 'block';
-        iconElement.style.display = 'none';
-        deleteButton.style.height = '16px';
-    });
-    
-    listElement.appendChild(iconElement);
-  
-    deleteButton.innerHTML = '<i class="fa fa-trash-o"></i>';
-    deleteButton.classList.add('delete-button');
-    deleteButton.style.display = 'none';
-  
-    deleteButton.addEventListener('click', () => {
-        deleteTask(task.index);
-    });
-    
-    listElement.appendChild(deleteButton);
-    
-    return listElement;
+  const iconElement = document.createElement('i');
+  const deleteButton = document.createElement('button');
+
+  descriptionElement.addEventListener('click', () => {
+    editTaskDescription(task);
+  });
+
+  checkBoxDiv.appendChild(checkboxElement);
+  checkBoxDiv.appendChild(descriptionElement);
+
+  listElement.appendChild(checkBoxDiv);
+
+  iconElement.classList.add('fa', 'fa-ellipsis-v');
+  iconElement.addEventListener('click', () => {
+    editTaskDescription(task);
+    listElement.style.backgroundColor = '#e5e5c9';
+    deleteButton.style.display = 'block';
+    iconElement.style.display = 'none';
+    deleteButton.style.height = '16px';
+  });
+
+  listElement.appendChild(iconElement);
+
+  deleteButton.innerHTML = '<i class="fa fa-trash-o"></i>';
+  deleteButton.classList.add('delete-button');
+  deleteButton.style.display = 'none';
+
+  deleteButton.addEventListener('click', () => {
+    deleteTask(task.index);
+  });
+
+  listElement.appendChild(deleteButton);
+
+  return listElement;
 };
 
 function addNewTask(description) {
-    const taskIndex = tasks.length + 1;
-    
-    const task = { description, completed: false, index: taskIndex };
-    tasks.push(task);
-    saveTasks();
-    const listElement = populateTaskLists(task);
-    taskList.appendChild(listElement);
+  const taskIndex = tasks.length + 1;
+
+  const task = { description, completed: false, index: taskIndex };
+  tasks.push(task);
+  saveTasks();
+  const listElement = populateTaskLists(task);
+  taskList.appendChild(listElement);
 }
 
 const updateIndex = () => {
@@ -115,5 +115,5 @@ editTaskDescription = (task) => {
 };
 
 export {
-  populateTaskLists, addNewTask, updateIndex, saveTasks, renderTaskList
+  populateTaskLists, addNewTask, updateIndex, saveTasks, renderTaskList,
 };
