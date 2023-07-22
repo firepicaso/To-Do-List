@@ -1,3 +1,5 @@
+import { taskComplete, taskInComplete } from "./status.js";
+
 const taskList = document.querySelector('.task-list');
 let editTaskDescription;
 let deleteTask;
@@ -14,6 +16,11 @@ const populateTaskLists = (task) => {
   const checkboxElement = document.createElement('input');
   checkboxElement.type = 'checkbox';
   checkboxElement.checked = task.completed;
+
+  checkboxElement.addEventListener('change', () => {
+    checkboxElement.checked ? taskComplete(task) : taskInComplete(task);
+    saveTasks();
+  });
 
   const descriptionElement = document.createElement('span');
   descriptionElement.classList.add('task-description');
