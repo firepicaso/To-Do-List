@@ -1,12 +1,12 @@
 import { taskComplete, taskInComplete } from './status.js';
 
 const taskList = document.querySelector('.task-list');
-let editTaskDescription;
-let deleteTask;
+export let editTaskDescription;
+export let deleteTask;
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-const saveTasks = () => {
+export const saveTasks = () => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 

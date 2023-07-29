@@ -5,6 +5,10 @@
   font-family: arial, sans-serif;
 }
 
+.light-grey {
+  color: rgb(186, 186, 186);
+}
+
 body {
   background-color: rgb(244, 243, 243);
   display: flex;
@@ -29,10 +33,6 @@ h1 {
   font-style: normal;
   font-weight: 500;
   color: #646464;
-}
-
-.fa-refresh {
-  color: rgb(186, 186, 186);
 }
 
 .header {
@@ -81,7 +81,6 @@ input[type='text'] {
 .task-add-button {
   background-color: transparent;
   border: none;
-  color: rgb(186, 186, 186);
 }
 
 .task-list {
@@ -114,10 +113,6 @@ input[type='text'] {
 .task-text {
   font-size: 1.2rem;
   border: none;
-}
-
-.fa-ellipsis-vertical {
-  color: rgb(186, 186, 186);
 }
 
 .fa-ellipsis-vertical:hover {
