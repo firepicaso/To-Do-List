@@ -36,7 +36,7 @@
 
 ## 🚀 Live Demo
 
-- You can see the demo [Here](comming soon)
+https://firepicaso.github.io/To-Do-List/dist/
 
 ## Key Features
 
